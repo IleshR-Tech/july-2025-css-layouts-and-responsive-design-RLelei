@@ -1,0 +1,118 @@
+/* ================================
+   Global Styles
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* ================================
+   Header Styles (Flexbox)
+================================ */
+.header {
+    display: flex;                     /* Flexbox layout */
+    justify-content: space-between;    /* Space between logo and nav */
+    align-items: center;              /* Center vertically */
+    background-color: #005f73;
+    color: white;
+    padding: 15px 20px;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #94d2bd;
+}
+
+/* ================================
+   Main Content Layout (Grid)
+================================ */
+.main-container {
+    display: grid;                     /* Grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px;                         /* Space between cards */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: white;
+    border: 2px solid #0a9396;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ================================
+   Footer Styles (Flexbox)
+================================ */
+.footer {
+    display: flex;                     /* Flexbox layout */
+    justify-content: center;
+    align-items: center;
+    background-color: #005f73;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* ================================
+   Responsive Design (Media Queries)
+================================ */
+
+/* Tablets (<= 768px) */
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+
+    .nav ul {
+        gap: 15px;
+    }
+}
+
+/* Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .main-container {
+        grid-template-columns: 1fr; /* Single column */
+    }
+}
